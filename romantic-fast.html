@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff9f2">
+  <meta name="description" content="9月25日，送给小朋友的一场十八岁解锁之旅。">
+  <title>小朋友 · 十八岁解锁之旅</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23d97888'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='37' fill='white'%3E18%3C/text%3E%3C/svg%3E">
+<style>:root{
+  --rose:#d97888;
+  --rose-deep:#a94f65;
+  --blush:#f8dce2;
+  --cream:#fff9f2;
+  --paper:#fffdf9;
+  --ink:#513e42;
+  --muted:#8d7478;
+  --sage:#81977c;
+  --gold:#d8a969;
+  --shadow:0 18px 55px rgba(116,70,78,.13);
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  color:var(--ink);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;background:#f7eee7;line-height:1.75;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 15% 12%,#ffdce6 0 9rem,transparent 23rem),radial-gradient(circle at 88% 65%,#e9efd9 0 8rem,transparent 24rem),linear-gradient(150deg,#fffaf4,#f5e9e3);pointer-events:none}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:3px solid #8d3f57;outline-offset:4px}
+[hidden]{display:none!important}
+.topbar{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;padding:.75rem max(1rem,calc((100vw - 68rem)/2));background:rgba(255,249,244,.9);border-bottom:1px solid rgba(169,79,101,.14);backdrop-filter:blur(16px)}
+.mini-brand{font-family:"Songti SC",SimSun,serif;font-size:.9rem;color:var(--rose-deep);white-space:nowrap}.mini-brand b{display:block;font-size:.68rem;letter-spacing:.15em;color:var(--muted);font-family:Georgia,serif;font-weight:400}
+.journey-progress{height:4px;background:#eadcda;border-radius:1rem;overflow:hidden}.journey-progress i{display:block;width:12.5%;height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .45s ease}
+.music-button{border:1px solid rgba(169,79,101,.22);background:#fff9f6;border-radius:999px;padding:.5rem .75rem;color:var(--rose-deep);font-size:.78rem;min-height:2.4rem}
+.chapter-nav{position:sticky;top:4.25rem;z-index:25;display:flex;justify-content:center;gap:.45rem;padding:.6rem 1rem;background:rgba(247,238,231,.82);backdrop-filter:blur(12px)}
+.chapter-dot{width:.62rem;height:.62rem;padding:0;border:0;border-radius:50%;background:#d7c5c2;transition:transform .25s,background .25s}.chapter-dot[aria-current="step"]{background:var(--rose-deep);transform:scale(1.3)}
+.journey{width:min(100%,72rem);margin:auto}
+.chapter{min-height:calc(100svh - 6.8rem);padding:clamp(2rem,6vw,5rem) clamp(1.25rem,6vw,5rem);position:relative;display:grid;align-content:center;overflow:hidden}
+.chapter-inner{position:relative;z-index:2;width:min(100%,48rem);margin:auto}
+.kicker{margin:0 0 .8rem;color:var(--rose-deep);font:700 .72rem/1.2 Georgia,serif;letter-spacing:.2em;text-transform:uppercase}
+h1,h2,h3{font-family:"Songti SC",SimSun,serif;font-weight:500;line-height:1.35;letter-spacing:.04em;margin:.4rem 0 1.2rem}
+h1{font-size:clamp(2.65rem,10vw,5.5rem)}h2{font-size:clamp(2rem,7vw,4rem)}h3{font-size:clamp(1.35rem,5vw,2rem)}
+.lead{font-size:clamp(1rem,2.5vw,1.22rem);color:var(--muted);max-width:35rem;line-height:2}
+.primary,.soft-button{border:0;border-radius:999px;min-height:3.2rem;padding:.8rem 1.4rem;transition:transform .2s,box-shadow .2s,background .2s}
+.primary{background:var(--rose-deep);color:#fff;box-shadow:0 10px 30px rgba(169,79,101,.25)}.primary:hover{transform:translateY(-2px);box-shadow:0 13px 34px rgba(169,79,101,.3)}
+.soft-button{background:#fff;border:1px solid #ead4d5;color:var(--rose-deep)}
+.next-button{display:inline-flex;margin-top:1.5rem;align-items:center;gap:.6rem}
+.next-button:after{content:"↓"}
+.sticker{position:absolute;z-index:1;filter:drop-shadow(0 8px 12px rgba(92,60,65,.1));pointer-events:none}.sticker svg{width:100%;height:auto;display:block}
+.sticker-cat{width:8rem;right:4%;top:12%;transform:rotate(7deg)}.sticker-dog{width:9rem;left:3%;bottom:7%;transform:rotate(-7deg)}.sticker-eight{width:7rem;right:5%;bottom:5%;transform:rotate(5deg)}
+.doodle-heart{position:absolute;color:rgba(217,120,136,.28);font-family:serif;font-size:clamp(4rem,16vw,11rem);line-height:1;pointer-events:none}
+.cover{text-align:center}.cover .chapter-inner{max-width:42rem}.cover h1 span{display:block;color:var(--rose-deep)}
+.envelope{width:min(100%,31rem);margin:2rem auto 0;padding:2rem 1.5rem 1.5rem;background:var(--paper);border:1px solid #eadbd5;box-shadow:var(--shadow);position:relative;border-radius:.25rem}.envelope:before,.envelope:after{content:"";position:absolute;top:0;width:50%;height:1px;background:#dfc8c7}.envelope:before{left:0;transform-origin:left;transform:rotate(26deg)}.envelope:after{right:0;transform-origin:right;transform:rotate(-26deg)}
+.hold-button{--hold:0%;position:relative;isolation:isolate;overflow:hidden;width:min(100%,19rem);margin-top:1rem}.hold-button:before{content:"";position:absolute;z-index:-1;inset:0 auto 0 0;width:var(--hold);background:#d97888;transition:width .08s linear}.hold-button.holding{color:#fff}
+.seal{display:block;width:3.5rem;height:3.5rem;margin:-3.8rem auto 1.2rem;border-radius:50%;background:var(--rose-deep);color:white;font:1.4rem/3.5rem Georgia,serif;box-shadow:0 5px 15px rgba(169,79,101,.25)}
+.game-board,.certificate-panel,.heart-panel,.wish-panel,.future-panel,.letter-shell{background:rgba(255,253,249,.88);border:1px solid rgba(169,79,101,.14);box-shadow:var(--shadow);padding:clamp(1.5rem,5vw,3rem);border-radius:1.2rem}
+.rps-options{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.5rem 0}.rps-option{border:1px solid #ead4d5;background:#fff8f6;border-radius:1rem;min-height:7.5rem;padding:.75rem;font-size:2.2rem}.rps-option span{display:block;font-size:.8rem;color:var(--muted);margin-top:.4rem}.rps-option:hover,.rps-option.selected{background:var(--blush);border-color:var(--rose);transform:translateY(-2px)}
+.result-card{min-height:5.5rem;padding:1rem 1.2rem;border-left:3px solid var(--rose);background:#fff7f3;color:var(--ink)}
+.memory-chapter{display:block;padding:0;overflow:visible;background:#241d20;color:#fff}.memory-header{position:sticky;top:6.65rem;z-index:10;display:flex;justify-content:space-between;padding:.8rem 1.25rem;background:rgba(36,29,32,.78);backdrop-filter:blur(10px);font:700 .72rem/1.2 Georgia,serif;letter-spacing:.18em}.memory-track{position:relative}.memory-track:before{content:"";position:absolute;z-index:5;left:1.2rem;top:8rem;bottom:8rem;width:1px;background:rgba(255,255,255,.34)}
+.memory-scene{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:7rem clamp(1.6rem,7vw,6rem) 5rem;isolation:isolate;overflow:hidden}.memory-scene img{position:absolute;z-index:-3;inset:0;width:100%;height:100%;object-fit:cover}.memory-scene:after{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(180deg,rgba(24,18,20,.12) 10%,rgba(24,18,20,.18) 42%,rgba(24,18,20,.88) 100%)}
+.memory-copy{width:min(100%,38rem);margin-left:max(1rem,4vw);opacity:.25;transform:translateY(2rem);transition:opacity .65s,transform .65s}.memory-scene.in-view .memory-copy{opacity:1;transform:none}.memory-no{display:inline-block;color:#ffdfbd;font:700 .75rem/1 Georgia,serif;letter-spacing:.2em;margin-bottom:1rem}.memory-copy h3{font-size:clamp(2.1rem,8vw,4.5rem);color:#fff;margin:.2rem 0 1rem}.memory-copy>p{font-size:clamp(.98rem,2.5vw,1.15rem);line-height:1.95;color:#fff8f1}.whisper-button{border:1px solid rgba(255,255,255,.5);background:rgba(20,15,17,.2);color:#fff;border-radius:999px;padding:.65rem 1rem;backdrop-filter:blur(8px)}.memory-whisper{margin-top:1rem;padding:1rem 1.1rem;background:rgba(255,248,244,.92);color:#684b51;border-radius:.5rem;font-family:KaiTi,"STKaiti",serif;font-size:1.08rem}.memory-ending{text-align:center;padding:5rem 1.5rem 6rem;background:linear-gradient(#241d20,#4d343b)}.memory-ending p{max-width:30rem;margin:0 auto 2rem;line-height:2;color:#fbe9e7}
+.audit-list{display:grid;gap:.8rem;margin:1.5rem 0}.audit-option{display:flex;justify-content:space-between;align-items:center;text-align:left;border:1px solid #ead8d6;background:#fffaf8;border-radius:.8rem;padding:1rem}.audit-option:after{content:"还没回答";font-size:.75rem;color:var(--muted)}.audit-option.checked{border-color:#a7b79f;background:#f1f5ed}.audit-option.checked:after{content:"当然可以 ♡";color:#60775b}
+.certificate{margin-top:1.5rem;padding:1.5rem;border:2px solid #dcb7b8;outline:1px solid #dcb7b8;outline-offset:-.45rem;text-align:center;background:#fffdf7}.certificate strong{display:block;font:2rem/1.4 "Songti SC",SimSun,serif;color:var(--rose-deep)}.certificate small{display:block;margin-top:1rem;letter-spacing:.12em;color:var(--muted)}
+.heart-panel{text-align:center}.heart-sensor{--heart-progress:0%;display:grid;place-items:center;width:12rem;height:12rem;margin:1.5rem auto;border:0;border-radius:50%;background:conic-gradient(var(--rose) var(--heart-progress),#f1dcdf 0);position:relative}.heart-sensor:before{content:"";position:absolute;inset:.55rem;border-radius:50%;background:#fff9f7}.heart-sensor span{position:relative;font-size:4.6rem;animation:pulse 1.15s infinite}.heart-sensor.holding span{animation-duration:.55s}.heart-result{font-family:"Songti SC",SimSun,serif;font-size:1.25rem;color:var(--rose-deep);min-height:3.5rem}
+.star-field{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem;margin:1.5rem 0}.wish-star{border:0;background:transparent;font-size:1.8rem;color:#d8c5bd;aspect-ratio:1}.wish-star.lit{color:#e7a84e;text-shadow:0 0 18px rgba(231,168,78,.7);transform:scale(1.18)}.wish-message{min-height:6rem;padding:1rem;background:#fff8f2;border-radius:.8rem;color:var(--rose-deep);font-family:KaiTi,"STKaiti",serif;font-size:1.15rem}.wish-count{font-size:.8rem;color:var(--muted);text-align:right}
+.lottery-window{min-height:9rem;display:grid;place-items:center;text-align:center;margin:1.5rem 0;padding:1.5rem;background:repeating-linear-gradient(-45deg,#fff8f4,#fff8f4 10px,#fbedec 10px,#fbedec 20px);border:1px dashed #d7a2aa}.lottery-window strong{font:1.45rem/1.65 "Songti SC",SimSun,serif;color:var(--rose-deep)}.future-ticket{margin-top:1.25rem;padding:1.25rem;border:1px dashed var(--rose-deep);background:#fffdf7}.future-ticket span{display:block;font-size:.75rem;letter-spacing:.13em;color:var(--muted)}
+.letter-shell{text-align:center}.wax-button{width:5.3rem;height:5.3rem;border:0;border-radius:50%;background:var(--rose-deep);color:white;font:1rem/1.25 Georgia,serif;box-shadow:inset 0 0 0 .35rem #bd687a,0 10px 25px rgba(169,79,101,.28)}.letter-paper{margin-top:1.5rem;text-align:left;padding:clamp(1.5rem,5vw,3rem);background:#fffefa;border:1px solid #eaded5;font:clamp(1rem,2.5vw,1.16rem)/2.15 "Songti SC",SimSun,serif}.letter-paper p{opacity:0;transform:translateY(.8rem);transition:opacity .6s,transform .6s}.letter-paper.open p{opacity:1;transform:none}.letter-paper.open p:nth-child(2){transition-delay:.35s}.letter-paper.open p:nth-child(3){transition-delay:.7s}.letter-paper.open p:nth-child(4){transition-delay:1.05s}.letter-paper.open p:nth-child(5){transition-delay:1.4s}.letter-ending{color:var(--rose-deep);font-size:1.15em}.signature{text-align:right;font-family:KaiTi,"STKaiti",serif}.final-sky{margin:1.5rem -1.5rem -1.5rem;min-height:55svh;background:url('memory-09.jpg') center/cover;position:relative;display:grid;place-items:end center;padding:3rem 1.5rem}.final-sky:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(29,21,25,.76))}.final-sky p{position:relative;color:white;font:clamp(1.45rem,5vw,2.3rem)/1.8 "Songti SC",SimSun,serif;text-align:center;text-shadow:0 2px 16px #000}
+.petal{position:fixed;z-index:50;top:-2rem;pointer-events:none;color:#f5a7b7;animation:petal-fall 4s ease-in forwards}
+.toast{position:fixed;z-index:60;left:50%;bottom:1.2rem;transform:translate(-50%,1rem);opacity:0;background:#513e42;color:#fff;padding:.7rem 1rem;border-radius:999px;font-size:.82rem;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes pulse{50%{transform:scale(1.12)}}@keyframes petal-fall{to{transform:translateY(110vh) rotate(540deg);opacity:.2}}
+@media(max-width:640px){.topbar{grid-template-columns:1fr auto}.journey-progress{grid-column:1/-1;grid-row:2}.chapter-nav{top:4.8rem}.chapter{min-height:calc(100svh - 7rem)}.sticker-cat{width:5.7rem;top:14%}.sticker-dog{width:6rem;opacity:.9}.sticker-eight{width:5.5rem}.memory-header{top:7.2rem}.memory-track:before{left:.75rem}.memory-scene{padding-left:1rem;padding-right:1rem}.memory-copy{margin-left:1rem}.star-field{grid-template-columns:repeat(6,1fr);gap:.2rem}.wish-star{font-size:1.55rem}.game-board,.certificate-panel,.heart-panel,.wish-panel,.future-panel,.letter-shell{border-radius:.8rem;padding:1.35rem}.final-sky{margin:1.5rem -1.35rem -1.35rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.memory-copy,.letter-paper p{opacity:1;transform:none}}
+.memory-copy>.memory-whisper{color:#684b51;line-height:1.8}
+.envelope,.envelope *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.hold-button{touch-action:none}
+.memory-scene{background:linear-gradient(135deg,#4b3b40,#2c2427)}.memory-scene img{opacity:0;transition:opacity .45s ease}.memory-scene img.loaded{opacity:1}.final-sky{background-image:none}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="mini-brand">给小朋友的手账<b>SEP. 25 · ADULTHOOD</b></div>
+    <div class="journey-progress" aria-hidden="true"><i id="journey-progress"></i></div>
+    <button id="music-button" class="music-button" type="button" aria-pressed="false">♫ 播放</button>
+  </header>
+  <nav id="chapter-dots" class="chapter-nav" aria-label="惊喜章节"></nav>
+  <audio id="bgm" loop preload="metadata" autoplay><source src="birthday-bgm.mp3" type="audio/mpeg"></audio>
+
+  <main class="journey">
+    <section class="chapter cover" data-title="秘密邀请" aria-labelledby="cover-title">
+      <span class="doodle-heart" style="left:3%;top:12%">♡</span>
+      <span class="doodle-heart" style="right:5%;bottom:8%">♡</span>
+      <div class="sticker sticker-cat" aria-hidden="true">
+        <svg viewBox="0 0 150 130"><path d="M35 45 24 19l31 14c12-6 33-6 45 0l28-15-9 29c10 11 14 27 9 41-7 22-30 34-55 33-28 0-52-14-57-37-3-14 4-29 19-39Z" fill="#fff" stroke="#7c6266" stroke-width="4"/><ellipse cx="56" cy="70" rx="4" ry="6" fill="#55464a"/><ellipse cx="99" cy="70" rx="4" ry="6" fill="#55464a"/><ellipse cx="78" cy="83" rx="5" ry="4" fill="#e2aa65"/><path d="M38 76 8 70m30 17L9 91m104-16 29-7m-29 19 29 5" fill="none" stroke="#7c6266" stroke-width="3"/><path d="M99 29c10-20 26-15 24-2 14-5 20 10 8 18-11 7-25 0-32-16Z" fill="#e7778c" stroke="#a94f65" stroke-width="3"/><circle cx="117" cy="34" r="6" fill="#f5c5ce"/></svg>
+      </div>
+      <div class="sticker sticker-dog" aria-hidden="true">
+        <svg viewBox="0 0 180 135"><path d="M58 51c-20-27-44-23-46-3-2 19 18 35 36 33m74-29c19-28 43-25 46-5 3 18-17 34-35 34" fill="#eee5d9" stroke="#786b63" stroke-width="4"/><path d="M43 72c0-35 22-57 49-57s48 22 48 57-20 50-48 50-49-15-49-50Z" fill="#fffaf0" stroke="#786b63" stroke-width="4"/><circle cx="73" cy="69" r="4" fill="#514842"/><circle cx="111" cy="69" r="4" fill="#514842"/><ellipse cx="92" cy="82" rx="7" ry="5" fill="#514842"/><path d="M79 93q13 13 26 0" fill="none" stroke="#d97888" stroke-width="4" stroke-linecap="round"/><path d="M57 112q-18 20-35 6m105-5q18 18 34 3" fill="none" stroke="#786b63" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="chapter-inner">
+        <p class="kicker">PRIVATE FILE · 09 / 25</p>
+        <h1 id="cover-title">小朋友的<span>十八岁秘密档案</span></h1>
+        <p class="lead" style="margin-inline:auto">这里装着一些傻乎乎的开始、一起走过的地方，还有我一直想认真告诉你的话。</p>
+        <div class="envelope">
+          <span class="seal">18</span>
+          <p>身份确认：即将成年的小朋友</p>
+          <button id="open-letter" class="primary hold-button" type="button">按住两秒，拆开这封信</button>
+          <small style="display:block;margin-top:.8rem;color:var(--muted)">松开会重新封好，慢慢来。</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" data-title="猜拳回忆" aria-labelledby="game-title" hidden>
+      <div class="sticker sticker-eight" aria-hidden="true"><svg viewBox="0 0 120 160"><path d="M61 12c-25 0-39 18-35 39 2 12 10 20 21 25-18 7-29 22-27 40 3 25 23 36 43 34 24-2 40-20 37-40-2-16-12-28-28-34 12-6 20-17 19-31-1-20-12-33-30-33Z" fill="#d9d5cf" stroke="#6f6865" stroke-width="4"/><path d="m39 24-14-12 2 24m47-11 15-13-4 25" fill="#d9d5cf" stroke="#6f6865" stroke-width="4"/><circle cx="48" cy="45" r="3.5"/><circle cx="69" cy="45" r="3.5"/><path d="M54 55q6 6 12 0M43 100q17 12 34 0" fill="none" stroke="#6f6865" stroke-width="3"/><path d="M25 88 8 79m86 11 17-10" stroke="#6f6865" stroke-width="4" stroke-linecap="round"/></svg></div>
+      <div class="chapter-inner">
+        <div class="game-board">
+          <p class="kicker">CHAPTER 01 · 科协保留节目</p>
+          <h2 id="game-title">再陪我猜一次拳</h2>
+          <p class="lead">第一次见面时，有个傻乎乎的小女孩玩游戏好像只会出布。现在再给你一次证明自己的机会。</p>
+          <div class="rps-options" role="group" aria-label="选择石头剪刀布">
+            <button class="rps-option" data-rps="石头" type="button">✊<span>石头</span></button>
+            <button class="rps-option" data-rps="剪刀" type="button">✌️<span>剪刀</span></button>
+            <button class="rps-option" data-rps="布" type="button">🖐️<span>布</span></button>
+          </div>
+          <p id="rps-result" class="result-card" aria-live="polite">这次你会出什么？</p>
+          <button id="game-next" class="soft-button next-button" data-next type="button" hidden>带你去看看，我们后来走了多远</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter memory-chapter" data-title="我们的时光" aria-labelledby="memory-title" hidden>
+      <div class="memory-header"><span id="memory-title">OUR STORY · 我们的时光</span><span id="memory-counter">01 / 09</span></div>
+      <div class="memory-track">
+        <article class="memory-scene" data-memory="01"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-01-1080.webp" data-srcset="memory-01-640.webp 640w, memory-01-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="镜前自拍"><div class="memory-copy"><span class="memory-no">STORY 01 · 初识</span><h3>科协里的<br>那张“布”</h3><p>学生科学技术协会里，有个傻乎乎的小女孩，玩游戏好像只会出布。那时我不知道，后来我会把这件小事记这么久。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>那时只觉得你很好玩，后来才知道，是心动在提前跟我打招呼。</p></div></article>
+        <article class="memory-scene" data-memory="02"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-02-1080.webp" data-srcset="memory-02-640.webp 640w, memory-02-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="确认心意的聊天记录"><div class="memory-copy"><span class="memory-no">STORY 02 · 五山</span><h3>我们终于<br>有了名字</h3><p>五山校区散步以后，在你不容躲闪的追问里，我糊里糊涂地承认了心意。原来有些喜欢，只差一个人勇敢地问出口。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>这张聊天记录对我来说，是我们的故事正式拥有名字的那一天。</p></div></article>
+        <article class="memory-scene" data-memory="03"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-03-1080.webp" data-srcset="memory-03-640.webp 640w, memory-03-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="拍摄日出的背影"><div class="memory-copy"><span class="memory-no">STORY 03 · 日出</span><h3>摸黑上山<br>一起等天亮</h3><p>半夜走在街上，摸黑爬白云山，有点累也有点狼狈。可天亮时，我们一起看见日出，也认真地走进了彼此的生活。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>日出很漂亮，但我更记得你站在光里的样子。</p></div></article>
+        <article class="memory-scene" data-memory="04"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-04-1080.webp" data-srcset="memory-04-640.webp 640w, memory-04-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="一起露营的帐篷"><div class="memory-copy"><span class="memory-no">STORY 04 · 露营</span><h3>很小的帐篷<br>很多的话</h3><p>在大学城的草地上，两个人挤在一起睡觉，说了好多好多话。原来安心和空间大小无关，只和身边的人有关。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>那晚我舍不得睡，不是因为草地，而是因为和你说话的时间过得太快。</p></div></article>
+        <article class="memory-scene" data-memory="05"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-05-1080.webp" data-srcset="memory-05-640.webp 640w, memory-05-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="一起修自行车"><div class="memory-copy"><span class="memory-no">STORY 05 · 骑行</span><h3>两个小时的<br>自行车</h3><p>我们去国际校区乱逛，苦命地踩了两个小时自行车。那些当时累得想停下来的路，后来都变成了想起来会笑的回忆。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>和你一起以后，绕远路好像也不算浪费时间。</p></div></article>
+        <article class="memory-scene" data-memory="06"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-06-1080.webp" data-srcset="memory-06-640.webp 640w, memory-06-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="写着祝福语的墙面"><div class="memory-copy"><span class="memory-no">STORY 06 · 广州</span><h3>一座城市<br>我们的地图</h3><p>北京路、海珠广场、广州塔、正佳、万达、天河公园、中心湖……广州很大，却被我们一点一点走成了属于我们的地图。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>我喜欢的从来不是某个商场，是每次转过头，你都还走在我身边。</p></div></article>
+        <article class="memory-scene" data-memory="07"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-07-1080.webp" data-srcset="memory-07-640.webp 640w, memory-07-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="俏皮比耶的小朋友"><div class="memory-copy"><span class="memory-no">STORY 07 · 清晖园</span><h3>一起看风景<br>一起吃饭</h3><p>顺德清晖园的风景、湛江喜欢的味道。喜欢一个人以后，“今天去哪里”都会变成值得期待的事情。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>只要对面坐着的是你，普通的一顿饭也值得我好好记住。</p></div></article>
+        <article class="memory-scene" data-memory="08"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-08-1080.webp" data-srcset="memory-08-640.webp 640w, memory-08-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="湖边的小朋友背影"><div class="memory-copy"><span class="memory-no">STORY 08 · 贵州</span><h3>瀑布、水花<br>还有你的笑</h3><p>黄果树瀑布的声音、漂流时的水花和笑声。以前以为旅行是在看风景，后来发现，我最想带走的是你回头的瞬间。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>风景会留在照片里，而你笑起来的样子，会留在我心里。</p></div></article>
+        <article class="memory-scene" data-memory="09"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="memory-09-1080.webp" data-srcset="memory-09-640.webp 640w, memory-09-1080.webp 1080w" sizes="100vw" loading="lazy" decoding="async" alt="校园天空下的日落"><div class="memory-copy"><span class="memory-no">STORY 09 · 夜空</span><h3>华农的风<br>广工的天空</h3><p>没有特别大的事情发生，可因为你在旁边，风和夜色都变得很温柔。从一张傻乎乎的“布”，到往后很多个晴天。</p><button class="whisper-button" type="button" aria-expanded="false">看看那时没说出口的话</button><p class="memory-whisper" hidden>九张照片装不下我们的全部故事。下一张，我想和你一起继续拍。</p></div></article>
+      </div>
+      <div class="memory-ending"><p>回头才发现，我们已经一起走了这么远。<br>而我真正想去的地方，是有你的以后。</p><button class="primary next-button" data-next type="button">下一站：她的十八岁</button></div>
+    </section>
+
+    <section class="chapter" data-title="成年认证" aria-labelledby="audit-title" hidden>
+      <div class="chapter-inner"><div class="certificate-panel">
+        <p class="kicker">CHAPTER 03 · ADULTHOOD CHECK</p><h2 id="audit-title">十八岁资格审查</h2><p class="lead">成年不是突然学会所有事情。请小朋友认真回答三个非常重要的问题。</p>
+        <div class="audit-list"><button class="audit-option" type="button" aria-pressed="false">成年以后，还可以偶尔撒娇吗？</button><button class="audit-option" type="button" aria-pressed="false">成年以后，还可以傻乎乎地笑吗？</button><button class="audit-option" type="button" aria-pressed="false">成年以后，还愿意继续做小朋友吗？</button></div>
+        <div id="certificate" class="certificate" hidden><span>成年资格认证书</span><strong>审核通过</strong><p>小朋友已于 9 月 25 日正式成年。<br>她被允许勇敢、自由、偶尔脆弱，<br>并被某人长期偏爱。</p><small>NO. 0925 · FOREVER 18</small><button class="soft-button next-button" data-next type="button">领取证书，继续检测</button></div>
+      </div></div>
+    </section>
+
+    <section class="chapter" data-title="心动检测" aria-labelledby="heart-title" hidden>
+      <div class="chapter-inner"><div class="heart-panel"><p class="kicker">CHAPTER 04 · HEART SENSOR</p><h2 id="heart-title">心跳感应</h2><p class="lead" style="margin-inline:auto">把手指放在爱心上停留三秒。它会检查，从五山到今天，这份心动还剩多少。</p><button id="heart-sensor" class="heart-sensor" type="button" aria-label="按住三秒进行心动检测"><span>♡</span></button><p id="heart-result" class="heart-result" aria-live="polite">等待小朋友触碰……</p><button class="soft-button next-button" data-next type="button">去点亮十八颗偏爱星</button></div></div>
+    </section>
+
+    <section class="chapter" data-title="十八颗偏爱" aria-labelledby="wish-title" hidden>
+      <div class="chapter-inner"><div class="wish-panel"><p class="kicker">CHAPTER 05 · 18 LITTLE STARS</p><h2 id="wish-title">十八颗偏爱星</h2><p class="lead">点亮任何一颗星，收下一句我喜欢你的理由，或送给十八岁小朋友的愿望。</p><div id="star-field" class="star-field" role="group" aria-label="十八颗祝愿星星"></div><p id="wish-message" class="wish-message" aria-live="polite">星星还在等你。随便先选一颗吧。</p><p id="wish-count" class="wish-count">已点亮 0 / 18</p><button class="soft-button next-button" data-next type="button">去抽取我们的下一站</button></div></div>
+    </section>
+
+    <section class="chapter" data-title="未来车票" aria-labelledby="future-title" hidden>
+      <div class="chapter-inner"><div class="future-panel"><p class="kicker">CHAPTER 06 · NEXT STOP</p><h2 id="future-title">下一次，一起去哪里？</h2><p class="lead">未来很长，先随机抽一件想和你一起做的小事。</p><div id="lottery-window" class="lottery-window"><strong>点击按钮，让命运偷偷安排一次约会</strong></div><button id="draw-future" class="primary" type="button">抽取未来车票 ✧</button><div id="future-ticket" class="future-ticket" hidden><span>PASSENGERS</span><strong>小朋友与她的笨蛋男朋友</strong><span>DESTINATION</span><strong></strong><span>DATE</span><strong>等你有空</strong></div><button class="soft-button next-button" data-next type="button">收好车票，打开最后一封信</button></div></div>
+    </section>
+
+    <section class="chapter" data-title="最后的信" aria-labelledby="letter-title" hidden>
+      <div class="chapter-inner"><div class="letter-shell"><p class="kicker">FINAL CHAPTER · FOR YOU</p><h2 id="letter-title">最后这些话，<br>想请你慢一点读。</h2><p class="lead" style="margin-inline:auto">前面的惊喜都看完了。现在，请你亲手打开结局。</p><button id="open-letter-seal" class="wax-button" type="button">OPEN<br>♡</button>
+        <div id="letter-paper" class="letter-paper" hidden>
+          <p>小朋友，成年快乐。</p>
+          <p>以前我不知道，一次科协里的相遇，会让我记得这么久；也不知道那个玩游戏时傻乎乎只会出布的女孩，会陪我看五山的风、白云山的日出、广州的夜晚，还有贵州的瀑布。</p>
+          <p>谢谢你让那些原本普通的日子，变成了我舍不得忘记的故事。露营时挤在一起的夜晚，骑了很久的自行车，华农的风和广工的天空——因为身边是你，它们都变得特别。</p>
+          <p>十八岁以后，你会遇见更大的世界。我不敢提前替未来保证所有事情，但我很认真地希望：以后很多个值得纪念的今天，我都还在你身边。</p>
+          <p class="letter-ending">愿你自由，愿你快乐。<br>愿你长大，也永远有人允许你做小朋友。</p>
+          <p class="signature">给小朋友，满满的喜欢<br><span>9月25日</span></p>
+          <div class="final-sky" data-bg="memory-09-1080.webp"><p>小朋友，成年快乐。<br>我们的故事，未完待续。</p></div>
+        </div>
+      </div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>'use strict';
+const chapters=[...document.querySelectorAll('.chapter')];
+const dots=document.querySelector('#chapter-dots');
+const progress=document.querySelector('#journey-progress');
+const bgm=document.querySelector('#bgm');
+const musicButton=document.querySelector('#music-button');
+const toast=document.querySelector('#toast');
+let current=0;
+bgm.volume=.2;
+
+function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+async function playMusic(){try{await bgm.play();musicButton.textContent='♫ 暂停';musicButton.setAttribute('aria-pressed','true')}catch{musicButton.textContent='♫ 播放';musicButton.setAttribute('aria-pressed','false')}}
+musicButton.addEventListener('click',()=>{if(bgm.paused)playMusic();else{bgm.pause();musicButton.textContent='♫ 播放';musicButton.setAttribute('aria-pressed','false')}});
+
+chapters.forEach((chapter,index)=>{const dot=document.createElement('button');dot.className='chapter-dot';dot.type='button';dot.setAttribute('aria-label',`前往第${index+1}章：${chapter.dataset.title}`);dot.addEventListener('click',()=>go(index));dots.append(dot)});
+function go(index,focus=true){current=Math.max(0,Math.min(chapters.length-1,index));chapters.forEach((chapter,i)=>chapter.hidden=i!==current);[...dots.children].forEach((dot,i)=>i===current?dot.setAttribute('aria-current','step'):dot.removeAttribute('aria-current'));progress.style.width=`${((current+1)/chapters.length)*100}%`;history.replaceState(null,'',`#${current+1}`);window.scrollTo({top:0,behavior:'smooth'});if(focus){const heading=chapters[current].querySelector('h1,h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}}}
+document.querySelectorAll('[data-next]').forEach(button=>button.addEventListener('click',()=>go(current+1)));
+
+const holdButton=document.querySelector('#open-letter');let openTimer;let openStart;
+function clearOpen(){clearInterval(openTimer);holdButton.classList.remove('holding');holdButton.style.setProperty('--hold','0%')}
+function unlockJourney(){clearOpen();playMusic();loadMemoryImage(0);showToast('十八岁秘密档案已开启 ♡');setTimeout(()=>go(1),500)}
+holdButton.addEventListener('pointerdown',event=>{event.preventDefault();try{holdButton.setPointerCapture(event.pointerId)}catch{}openStart=Date.now();holdButton.classList.add('holding');openTimer=setInterval(()=>{const pct=Math.min(100,(Date.now()-openStart)/16);holdButton.style.setProperty('--hold',`${pct}%`);if(pct>=100)unlockJourney()},60)});
+['pointerup','pointerleave','pointercancel'].forEach(type=>holdButton.addEventListener(type,clearOpen));
+['contextmenu','selectstart','dragstart'].forEach(type=>holdButton.addEventListener(type,event=>event.preventDefault()));
+holdButton.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();unlockJourney()}});
+
+const beats={
+  石头:{emoji:'✊',beats:'剪刀'},剪刀:{emoji:'✌️',beats:'布'},布:{emoji:'🖐️',beats:'石头'}
+};
+const rpsResult=document.querySelector('#rps-result');let paperCount=0;
+document.querySelectorAll('[data-rps]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-rps]').forEach(item=>item.classList.remove('selected'));button.classList.add('selected');const choice=button.dataset.rps;paperCount=choice==='布'?paperCount+1:0;const keys=Object.keys(beats);const computer=keys[Math.floor(Math.random()*keys.length)];let text;if(choice===computer)text=`我们都出了${choice}。原来我们从一开始，就很适合站在同一边。`;else if(beats[choice].beats===computer)text=`你出了${choice}，我出了${computer}。这局你赢了；其实从科协第一次见到你开始，我就已经输给你了。`;else text=`你出了${choice}，我出了${computer}。这局算我赢，以后那些更重要的事，我都想让你赢。`;if(paperCount>=3)text='检测成功：果然还是那个玩游戏只会出布、却让我记了很久的小朋友。';rpsResult.textContent=text;document.querySelector('#game-next').hidden=false}));
+
+const memoryCounter=document.querySelector('#memory-counter');
+const memoryScenes=[...document.querySelectorAll('.memory-scene')];
+const memoryImages=memoryScenes.map(scene=>scene.querySelector('img'));
+function loadMemoryImage(index){const image=memoryImages[index];if(!image||!image.dataset.src)return;image.addEventListener('load',()=>image.classList.add('loaded'),{once:true});image.src=image.dataset.src;image.srcset=image.dataset.srcset;delete image.dataset.src;delete image.dataset.srcset}
+const memoryObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const index=memoryScenes.indexOf(entry.target);entry.target.classList.add('in-view');memoryCounter.textContent=`${entry.target.dataset.memory} / 09`;loadMemoryImage(index);loadMemoryImage(index+1)}}),{threshold:.2,rootMargin:'100% 0px'});
+memoryScenes.forEach(scene=>memoryObserver.observe(scene));
+document.querySelectorAll('.whisper-button').forEach(button=>button.addEventListener('click',()=>{const whisper=button.nextElementSibling;whisper.hidden=!whisper.hidden;button.textContent=whisper.hidden?'看看那时没说出口的话':'把这句话收好 ♡';button.setAttribute('aria-expanded',String(!whisper.hidden))}));
+
+let audits=0;document.querySelectorAll('.audit-option').forEach(button=>button.addEventListener('click',()=>{if(!button.classList.contains('checked')){button.classList.add('checked');button.setAttribute('aria-pressed','true');audits++}if(audits===3)document.querySelector('#certificate').hidden=false}));
+
+const heart=document.querySelector('#heart-sensor');const heartResult=document.querySelector('#heart-result');let heartTimer;let heartStart;
+function clearHeart(){clearInterval(heartTimer);heart.classList.remove('holding');if(!heart.dataset.done)heart.style.setProperty('--heart-progress','0%')}
+function finishHeart(){heart.dataset.done='true';clearInterval(heartTimer);heart.classList.remove('holding');heart.style.setProperty('--heart-progress','100%');heartResult.innerHTML='检测完成：<br><strong>关于你的心动，没有检测到结束日期。</strong>';if(navigator.vibrate)navigator.vibrate([80,60,120])}
+heart.addEventListener('pointerdown',()=>{heartStart=Date.now();heart.classList.add('holding');heartTimer=setInterval(()=>{const pct=Math.min(100,(Date.now()-heartStart)/28);heart.style.setProperty('--heart-progress',`${pct}%`);if(pct>=100)finishHeart()},60)});['pointerup','pointerleave','pointercancel'].forEach(type=>heart.addEventListener(type,clearHeart));heart.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();finishHeart()}});
+
+const wishes=['喜欢你玩游戏时傻乎乎只会出布','喜欢你认真追问我心意的勇敢','喜欢和你一起摸黑上山再等天亮','喜欢我们挤在帐篷里舍不得睡','喜欢和你踩很久的车也喜欢每次到达','喜欢和你看过的每一片夜空','愿你常常发自内心地笑','愿你永远有做自己的底气','愿你的每一份喜欢都有回响','愿你偶尔发呆也能心安','愿你勇敢，也一直被温柔对待','愿你拥有自在而明亮的生活','愿你认真吃饭，也好好睡觉','愿你的努力都慢慢开花','愿你一直保留一点小孩子气','愿你不用逞强也有人珍惜','愿你去到所有向往的地方','愿你十八岁以后，快乐不止今天'];
+const stars=document.querySelector('#star-field');const lit=new Set();wishes.forEach((wish,index)=>{const button=document.createElement('button');button.className='wish-star';button.type='button';button.textContent='★';button.setAttribute('aria-label',`点亮第${index+1}颗偏爱星`);button.addEventListener('click',()=>{button.classList.add('lit');button.setAttribute('aria-pressed','true');lit.add(index);let message=wish;if(lit.size===6)message='这些，是我喜欢你的理由。';if(lit.size===12)message='还有很多，我没有全部写下来。';if(lit.size===18)message='真正的喜欢，十八颗星星也装不完。';document.querySelector('#wish-message').textContent=message;document.querySelector('#wish-count').textContent=`已点亮 ${lit.size} / 18`});stars.append(button)});
+
+const plans=['再一起等一次日出','把广州没有逛完的地方继续逛完','一起去一个从没去过的城市','找一片草地，再聊一个舍不得睡的晚上','什么都不安排，只认真见一面','去吃一顿期待了很久的饭'];let rolling;
+document.querySelector('#draw-future').addEventListener('click',()=>{clearInterval(rolling);let turns=0;const window=document.querySelector('#lottery-window strong');rolling=setInterval(()=>{window.textContent=plans[Math.floor(Math.random()*plans.length)];turns++;if(turns>12){clearInterval(rolling);const plan=plans[Math.floor(Math.random()*plans.length)];window.textContent=plan;const ticket=document.querySelector('#future-ticket');ticket.hidden=false;ticket.querySelector('strong').textContent=plan}},85)});
+
+document.querySelector('#open-letter-seal').addEventListener('click',()=>{const letter=document.querySelector('#letter-paper');const sky=document.querySelector('.final-sky');letter.hidden=false;sky.style.backgroundImage=`url('${sky.dataset.bg}')`;requestAnimationFrame(()=>letter.classList.add('open'));document.querySelector('#open-letter-seal').hidden=true;bgm.volume=.14;setTimeout(()=>makePetals(28),1100)});
+function makePetals(count){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;for(let i=0;i<count;i++){const petal=document.createElement('i');petal.className='petal';petal.textContent=i%3?'♡':'✿';petal.style.left=`${Math.random()*100}%`;petal.style.animationDelay=`${Math.random()*1.8}s`;petal.style.fontSize=`${.7+Math.random()*1.1}rem`;document.body.append(petal);setTimeout(()=>petal.remove(),6200)}}
+
+document.addEventListener('pointerdown',()=>{if(bgm.paused)playMusic()},{once:true,capture:true,passive:true});
+playMusic();
+const hashIndex=Number(location.hash.slice(1))-1;go(Number.isInteger(hashIndex)&&hashIndex>=0&&hashIndex<chapters.length?hashIndex:0,false);
+</script></body>
+</html>
