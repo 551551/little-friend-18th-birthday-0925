@@ -33,8 +33,8 @@
 <span class="big-number" aria-hidden="true">18</span>
 </section>
 <section class="page" data-title="生日许愿" aria-labelledby="title-2" hidden>
-<p class="eyebrow">01 / 今天，宇宙偏爱你</p><h2 id="title-2">十八岁，<br>生日快乐。</h2><p class="intro">先不急着长大。<br>闭上眼睛，把一个愿望轻轻放在心里。</p>
-<div class="wish-area"><span class="birthday-number">18<span>HAPPY BIRTHDAY</span></span><button id="wish" class="primary">我许好愿啦 ✧</button><p id="wish-message" class="soft-message" aria-live="polite">这一次，愿望属于你。</p></div>
+<p class="eyebrow">01 / 今天，宇宙偏爱你</p><h2 id="title-2">十八岁，<br>成年快乐。</h2><p class="intro">先不急着长大。<br>闭上眼睛，把一个愿望轻轻放在心里。</p>
+<div class="wish-area"><span class="birthday-number">18<span>HAPPY ADULTHOOD</span></span><button id="wish" class="primary">我许好愿啦 ✧</button><p id="wish-message" class="soft-message" aria-live="polite">这一次，愿望属于你。</p></div>
 <p class="handwriting centered">愿今天的你，被好好庆祝。</p>
 </section>
 <section class="page memory-report" data-title="时光 · 初识" aria-labelledby="memory-title-1" hidden><img class="memory-photo" src="memory-01.jpg" alt="镜前自拍"><div class="memory-veil"></div><div class="report-meta"><span>我们的时光 / 01</span><span>01 — 09</span></div><div class="report-copy"><p>STORY 01</p><h2 id="memory-title-1">科协里的<br>那张“布”</h2><p>学生科学技术协会里，有个傻乎乎的小女孩玩游戏好像只会出布。那时我不知道，后来我会把这件小事记这么久。</p></div><span class="report-next">继续上滑</span></section>
@@ -62,7 +62,7 @@
 </section>
 <section class="page letter-page" data-title="写给你的信" aria-labelledby="title-7" hidden>
 <p class="eyebrow">06 / 最后一页，也是新的开始</p><h2 id="title-7">写给十八岁的<br>小朋友。</h2>
-<div class="letter"><p>小朋友，生日快乐。</p><p>以前我不知道，一次科协里的相遇，会让我记得这么久；也不知道那个玩游戏时傻乎乎只会出布的女孩，会陪我看五山的风、白云山的日出、广州的夜晚，还有贵州的瀑布。</p><p>谢谢你让那些原本普通的日子，变成了我舍不得忘记的故事。露营时挤在一起的夜晚，骑了很久的自行车，华农的风和广工的天空——因为身边是你，它们都变得特别。</p><p>十八岁不是一定要突然变成无所不能的大人。你可以继续傻乎乎地笑，继续勇敢地喜欢，继续做那个会让我心动的小朋友。</p><p>我希望以后还有很多次日出、很多条街、很多场旅行，还有很多个抬头看天空的夜晚。</p><p class="letter-ending">而每一次，我都希望身边的人还是你。<br>愿你自由，愿你快乐。<br>愿你长大，也继续做小朋友。</p><p class="signature">给小朋友，满满的祝福<br><span>9月25日</span></p></div><button class="text-button" id="restart">再翻一次这本手账 ↺</button>
+<div class="letter"><p>小朋友，成年快乐。</p><p>以前我不知道，一次科协里的相遇，会让我记得这么久；也不知道那个玩游戏时傻乎乎只会出布的女孩，会陪我看五山的风、白云山的日出、广州的夜晚，还有贵州的瀑布。</p><p>谢谢你让那些原本普通的日子，变成了我舍不得忘记的故事。露营时挤在一起的夜晚，骑了很久的自行车，华农的风和广工的天空——因为身边是你，它们都变得特别。</p><p>十八岁不是一定要突然变成无所不能的大人。你可以继续傻乎乎地笑，继续勇敢地喜欢，继续做那个会让我心动的小朋友。</p><p>我希望以后还有很多次日出、很多条街、很多场旅行，还有很多个抬头看天空的夜晚。</p><p class="letter-ending">而每一次，我都希望身边的人还是你。<br>愿你自由，愿你快乐。<br>愿你长大，也继续做小朋友。</p><p class="signature">给小朋友，满满的祝福<br><span>9月25日</span></p></div><button class="text-button" id="restart">再翻一次这本手账 ↺</button>
 </section>
 <footer class="page-controls"><button id="prev" class="text-button">← 上一页</button><span id="page-number">01 / 07</span><button id="next" class="text-button">下一页 →</button></footer>
 </div>
@@ -126,7 +126,7 @@ document.addEventListener('touchend',event=>{
 },{passive:true});
 document.querySelector('#wish').addEventListener('click',()=>{
   document.querySelector('#wish-message').textContent='愿望已悄悄收好。愿你的期待，慢慢开花。';
-  document.querySelector('#wish').textContent='生日快乐，小朋友 ♡';
+  document.querySelector('#wish').textContent='成年快乐，小朋友 ♡';
   const container=document.querySelector('#confetti');container.replaceChildren();
   if(!matchMedia('(prefers-reduced-motion: reduce)').matches){for(let i=0;i<45;i++){const piece=document.createElement('i');piece.className='confetti-piece';piece.style.left=`${Math.random()*100}%`;piece.style.background=['#b35448','#bca36c','#768267','#d5ad99'][i%4];piece.style.animationDelay=`${Math.random()*.7}s`;container.append(piece);}setTimeout(()=>container.replaceChildren(),3600);}
 });
