@@ -71,6 +71,7 @@ h1{font-size:clamp(2.65rem,10vw,5.5rem)}h2{font-size:clamp(2rem,7vw,4rem)}h3{fon
 @media(max-width:640px){.topbar{grid-template-columns:1fr auto}.journey-progress{grid-column:1/-1;grid-row:2}.chapter-nav{top:4.8rem}.chapter{min-height:calc(100svh - 7rem)}.sticker-cat{width:5.7rem;top:14%}.sticker-dog{width:6rem;opacity:.9}.sticker-eight{width:5.5rem}.memory-header{top:7.2rem}.memory-track:before{left:.75rem}.memory-scene{padding-left:1rem;padding-right:1rem}.memory-copy{margin-left:1rem}.star-field{grid-template-columns:repeat(6,1fr);gap:.2rem}.wish-star{font-size:1.55rem}.game-board,.certificate-panel,.heart-panel,.wish-panel,.future-panel,.letter-shell{border-radius:.8rem;padding:1.35rem}.final-sky{margin:1.5rem -1.35rem -1.35rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.memory-copy,.letter-paper p{opacity:1;transform:none}}
 .memory-copy>.memory-whisper{color:#684b51;line-height:1.8}
+.envelope,.envelope *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.hold-button{touch-action:none}
 </style>
 </head>
 <body>
@@ -195,8 +196,9 @@ document.querySelectorAll('[data-next]').forEach(button=>button.addEventListener
 const holdButton=document.querySelector('#open-letter');let openTimer;let openStart;
 function clearOpen(){clearInterval(openTimer);holdButton.classList.remove('holding');holdButton.style.setProperty('--hold','0%')}
 function unlockJourney(){clearOpen();playMusic();showToast('十八岁秘密档案已开启 ♡');setTimeout(()=>go(1),500)}
-holdButton.addEventListener('pointerdown',()=>{openStart=Date.now();holdButton.classList.add('holding');openTimer=setInterval(()=>{const pct=Math.min(100,(Date.now()-openStart)/16);holdButton.style.setProperty('--hold',`${pct}%`);if(pct>=100)unlockJourney()},60)});
+holdButton.addEventListener('pointerdown',event=>{event.preventDefault();try{holdButton.setPointerCapture(event.pointerId)}catch{}openStart=Date.now();holdButton.classList.add('holding');openTimer=setInterval(()=>{const pct=Math.min(100,(Date.now()-openStart)/16);holdButton.style.setProperty('--hold',`${pct}%`);if(pct>=100)unlockJourney()},60)});
 ['pointerup','pointerleave','pointercancel'].forEach(type=>holdButton.addEventListener(type,clearOpen));
+['contextmenu','selectstart','dragstart'].forEach(type=>holdButton.addEventListener(type,event=>event.preventDefault()));
 holdButton.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();unlockJourney()}});
 
 const beats={
