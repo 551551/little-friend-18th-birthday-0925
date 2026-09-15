@@ -219,7 +219,7 @@ document.querySelectorAll('[data-rps]').forEach(button=>button.addEventListener(
 
 const memoryCounter=document.querySelector('#memory-counter');
 const memoryScenes=[...document.querySelectorAll('.memory-scene')];
-memoryScenes.forEach((scene,index)=>{if([1,3,5].includes(index)){scene.classList.add('memory-scene--full');scene.style.setProperty('--memory-photo',`url('memory-${String(index+1).padStart(2,'0')}-mobile.jpg')`)}});
+memoryScenes.forEach((scene,index)=>{if([1,5].includes(index)){scene.classList.add('memory-scene--full');scene.style.setProperty('--memory-photo',`url('memory-${String(index+1).padStart(2,'0')}-mobile.jpg')`)}});
 const memoryObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');memoryCounter.textContent=`${entry.target.dataset.memory} / 09`}}),{threshold:.2,rootMargin:'100% 0px'});
 memoryScenes.forEach(scene=>memoryObserver.observe(scene));
 document.querySelectorAll('.whisper-button').forEach(button=>button.addEventListener('click',()=>{const whisper=button.nextElementSibling;whisper.hidden=!whisper.hidden;button.textContent=whisper.hidden?'看看那时没说出口的话':'把这句话收好 ♡';button.setAttribute('aria-expanded',String(!whisper.hidden))}));
