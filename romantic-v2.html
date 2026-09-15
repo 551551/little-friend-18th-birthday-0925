@@ -211,7 +211,7 @@ document.querySelectorAll('[data-rps]').forEach(button=>button.addEventListener(
 const memoryCounter=document.querySelector('#memory-counter');
 const memoryScenes=[...document.querySelectorAll('.memory-scene')];
 const memoryImages=memoryScenes.map(scene=>scene.querySelector('img'));
-function loadMemoryImage(index){const image=memoryImages[index];if(!image||!image.dataset.src)return;image.addEventListener('load',()=>image.classList.add('loaded'),{once:true});image.src=image.dataset.src;image.srcset=image.dataset.srcset;delete image.dataset.src;delete image.dataset.srcset}
+function loadMemoryImage(index){const image=memoryImages[index];if(!image||!image.dataset.src)return;image.addEventListener('load',()=>image.classList.add('loaded'),{once:true});image.loading='eager';image.src=image.dataset.src;image.srcset=image.dataset.srcset;delete image.dataset.src;delete image.dataset.srcset}
 const memoryObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const index=memoryScenes.indexOf(entry.target);entry.target.classList.add('in-view');memoryCounter.textContent=`${entry.target.dataset.memory} / 09`;loadMemoryImage(index);loadMemoryImage(index+1)}}),{threshold:.2,rootMargin:'100% 0px'});
 memoryScenes.forEach(scene=>memoryObserver.observe(scene));
 document.querySelectorAll('.whisper-button').forEach(button=>button.addEventListener('click',()=>{const whisper=button.nextElementSibling;whisper.hidden=!whisper.hidden;button.textContent=whisper.hidden?'看看那时没说出口的话':'把这句话收好 ♡';button.setAttribute('aria-expanded',String(!whisper.hidden))}));
