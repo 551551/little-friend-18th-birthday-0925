@@ -221,7 +221,7 @@ function setupHold(button,{duration,property,onComplete}){
   let frame=0,start=0,activePointer=null,activeKey=null,completed=false;
   const setProgress=value=>button.style.setProperty(property,`${value}%`);
   const cancel=()=>{if(frame)cancelAnimationFrame(frame);frame=0;button.classList.remove('holding');if(!completed)setProgress(0);activePointer=null;activeKey=null};
-  const finish=()=>{if(completed)return;completed=true;if(frame)cancelAnimationFrame(frame);frame=0;button.classList.remove('holding');setProgress(100);button.dataset.holdComplete='true';if(navigator.vibrate)navigator.vibrate([55,35,90]);onComplete()};
+  const finish=()=>{if(completed)return;completed=true;if(frame)cancelAnimationFrame(frame);frame=0;const pointerToRelease=activePointer;activePointer=null;activeKey=null;if(pointerToRelease!==null){try{if(button.hasPointerCapture(pointerToRelease))button.releasePointerCapture(pointerToRelease)}catch{}}button.classList.remove('holding');setProgress(100);button.dataset.holdComplete='true';if(navigator.vibrate)navigator.vibrate([55,35,90]);onComplete()};
   const tick=now=>{const percent=Math.min(100,((now-start)/duration)*100);setProgress(percent);if(percent>=100)finish();else frame=requestAnimationFrame(tick)};
   const begin=event=>{if(completed||frame||activePointer!==null||activeKey!==null)return;if(event.type==='pointerdown'){if(event.isPrimary===false||(typeof event.button==='number'&&event.button!==0))return;event.preventDefault();activePointer=event.pointerId;try{button.setPointerCapture(event.pointerId)}catch{}}else{activeKey=event.key}start=performance.now();button.classList.add('holding');frame=requestAnimationFrame(tick)};
   button.addEventListener('pointerdown',begin);
@@ -265,7 +265,7 @@ let audits=0,certificateQueued=false,certificateStamps=0;document.querySelectorA
 document.querySelector('#certificate-seal').addEventListener('click',event=>{certificateStamps++;const seal=event.currentTarget;seal.classList.remove('stamped');requestAnimationFrame(()=>seal.classList.add('stamped'));if(certificateStamps===3){document.querySelector('#certificate-easter').hidden=false;showToast('检测到偏爱超标 ♡');makeSymbols(12)}});
 
 const heart=document.querySelector('#heart-sensor');const heartResult=document.querySelector('#heart-result');
-function finishHeart(){heart.dataset.done='true';heartResult.innerHTML='<strong>关于你的心动，没有检测到结束日期。</strong>'}
+function finishHeart(){heart.dataset.done='true';heartResult.innerHTML='<strong>关于你的心动，没有结束日期。</strong>'}
 setupHold(heart,{duration:3000,property:'--heart-progress',onComplete:finishHeart});
 
 const wishes=[
