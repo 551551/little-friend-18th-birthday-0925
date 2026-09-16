@@ -50,8 +50,8 @@ h1{font-size:clamp(2.65rem,10vw,5.5rem)}h2{font-size:clamp(2rem,7vw,4rem)}h3{fon
 .next-button:after{content:"↓"}
 .sticker{position:absolute;z-index:1;filter:drop-shadow(0 8px 12px rgba(92,60,65,.1));pointer-events:none}.sticker svg{width:100%;height:auto;display:block}
 .sticker-cat{width:8rem;right:4%;top:12%;transform:rotate(7deg)}.sticker-dog{width:9rem;left:3%;bottom:7%;transform:rotate(-7deg)}.sticker-eight{width:7rem;right:5%;bottom:5%;transform:rotate(5deg)}
-.doodle-heart{position:absolute;color:rgba(217,120,136,.28);font-family:serif;font-size:clamp(4rem,16vw,11rem);line-height:1;pointer-events:none}
-.cover{text-align:center}.cover .chapter-inner{max-width:42rem}.cover h1 span{display:block;color:var(--rose-deep)}
+.doodle-heart{position:absolute;color:rgba(217,120,136,.28);font-family:serif;line-height:1;pointer-events:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.doodle-heart:before{content:"♡";font-size:clamp(4rem,16vw,11rem)}
+.cover,.cover *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.cover{text-align:center}.cover .chapter-inner{max-width:42rem}.cover h1 span{display:block;color:var(--rose-deep)}
 .envelope{width:min(100%,31rem);margin:2rem auto 0;padding:2rem 1.5rem 1.5rem;background:var(--paper);border:1px solid #eadbd5;box-shadow:var(--shadow);position:relative;border-radius:.25rem}.envelope:before,.envelope:after{content:"";position:absolute;top:0;width:50%;height:1px;background:#dfc8c7}.envelope:before{left:0;transform-origin:left;transform:rotate(26deg)}.envelope:after{right:0;transform-origin:right;transform:rotate(-26deg)}
 .hold-button{--hold:0%;position:relative;isolation:isolate;overflow:hidden;width:min(100%,19rem);margin-top:1rem}.hold-button:before{content:"";position:absolute;z-index:-1;inset:0 auto 0 0;width:var(--hold);background:#d97888}.hold-button.holding{color:#fff}
 .seal{display:block;width:3.5rem;height:3.5rem;margin:-3.8rem auto 1.2rem;border-radius:50%;background:var(--rose-deep);color:white;font:1.4rem/3.5rem Georgia,serif;box-shadow:0 5px 15px rgba(169,79,101,.25)}
@@ -92,8 +92,8 @@ h1{font-size:clamp(2.65rem,10vw,5.5rem)}h2{font-size:clamp(2rem,7vw,4rem)}h3{fon
   <main class="journey">
     <section class="chapter cover" data-title="秘密邀请" aria-labelledby="cover-title">
       <button class="secret-heart" data-secret-heart type="button" aria-label="发现一颗藏起来的喜欢" style="left:7%;top:34%">♡</button>
-      <span class="doodle-heart" style="left:3%;top:12%">♡</span>
-      <span class="doodle-heart" style="right:5%;bottom:8%">♡</span>
+      <span class="doodle-heart" style="left:3%;top:12%" aria-hidden="true"></span>
+      <span class="doodle-heart" style="right:5%;bottom:8%" aria-hidden="true"></span>
       <div class="sticker sticker-cat" aria-hidden="true">
         <svg viewBox="0 0 150 130"><path d="M35 45 24 19l31 14c12-6 33-6 45 0l28-15-9 29c10 11 14 27 9 41-7 22-30 34-55 33-28 0-52-14-57-37-3-14 4-29 19-39Z" fill="#fff" stroke="#7c6266" stroke-width="4"/><ellipse cx="56" cy="70" rx="4" ry="6" fill="#55464a"/><ellipse cx="99" cy="70" rx="4" ry="6" fill="#55464a"/><ellipse cx="78" cy="83" rx="5" ry="4" fill="#e2aa65"/><path d="M38 76 8 70m30 17L9 91m104-16 29-7m-29 19 29 5" fill="none" stroke="#7c6266" stroke-width="3"/><path d="M99 29c10-20 26-15 24-2 14-5 20 10 8 18-11 7-25 0-32-16Z" fill="#e7778c" stroke="#a94f65" stroke-width="3"/><circle cx="117" cy="34" r="6" fill="#f5c5ce"/></svg>
       </div>
@@ -243,6 +243,8 @@ function makePetals(count){if(reduceMotion.matches)return;for(let index=0;index<
 function makeFinalCelebration(){makePetals(44);makeConfetti(34);makeSymbols(22);makeBurst(24,42,24,.1);makeBurst(76,38,24,.25);setTimeout(()=>makeBurst(50,26,28),480)}
 
 const holdButton=document.querySelector('#open-letter');
+const cover=document.querySelector('.cover');
+['contextmenu','selectstart','dragstart'].forEach(type=>cover.addEventListener(type,event=>event.preventDefault()));
 function unlockJourney(){playMusic();makeOpeningCelebration();showToast('十八岁秘密档案已开启 ♡');setTimeout(()=>go(1),650)}
 setupHold(holdButton,{duration:2000,property:'--hold',onComplete:unlockJourney});
 
